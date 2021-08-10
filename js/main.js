@@ -6,6 +6,7 @@ const icon = searchWrapper.querySelector(".icon");
 let linkTag = searchWrapper.querySelector("a");
 let webLink;
 
+
 // if user press any key and release
 inputBox.onkeyup = (e)=>{
     let userData = e.target.value; //retrieve the data that the user enetered
@@ -72,6 +73,7 @@ function select(element){
         linkTag.click();
     }
     searchWrapper.classList.remove("active");
+    console.log("ok");
 }
 
 function showSuggestions(list){

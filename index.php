@@ -2,7 +2,6 @@
 
     require_once "app\simple.php";
 
-
     if(isset($_GET['q'])){
         
         $q = $_GET['q'];
@@ -10,24 +9,6 @@
         $query = $client->search([
 
             'body' => [
-                /*
-                'query' => [                            
-                          "multi_match" => [
-                            "fields" => ["product_brand", "product_category","product_state","product_reference","product_name"],
-                            "query" => $q,
-                            "type" => "phrase_prefix"
-                        ]
-
-                ]*/
-
-                /*'query' => [
-                    'multi_match' => [
-                        'query' => $q,
-                        'fuzziness' => 1,
-                        'fields' => ["product_reference"],
-                        
-                    ]
-                ]*/
                     "query" => [
                             "multi_match" => [
                               "fields"=>["product_*"],
@@ -130,8 +111,7 @@
         </div>
     </div>
 
-    <script src="js/suggestions.js"></script>
-    <script src="js/main.js"></script>
+    <script src="search_as_you_type.js" ></script>
 </body>
 
 </html>
